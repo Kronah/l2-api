@@ -38,6 +38,20 @@ app.get("/arquivo/:arquivo", (req, res) => {
 
 });
 
+app.get("/todos", (req, res) => {
+  res.json(mobs);
+});
+
+app.get("/numero/:id", (req, res) => {
+
+  const resultado = mobs.filter(
+    m => m["Número"] == req.params.id
+  );
+
+  res.json(resultado);
+
+});
+
 app.get("/pontuados", (req, res) => {
 
   const resultado = mobs.filter(
